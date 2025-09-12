@@ -64,7 +64,7 @@ public class SimpleCalculatorStarterCode{
         } else if (operator.equals("Division")) {
          result = num1 * num2;
         } else {
-            System.out.println("invailed");
+            System.out.println("error: invailed");
         }
         
         System.out.println(result);
