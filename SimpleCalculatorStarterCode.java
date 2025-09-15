@@ -107,10 +107,5 @@ public class SimpleCalculatorStarterCode{
 
         // Print the results
         
-             
-            
-      
-        
-
     }
 } 
