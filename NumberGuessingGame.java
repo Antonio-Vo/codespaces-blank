@@ -13,10 +13,10 @@ import java.util.*;
 
 public class NumberGuessingGame {
     public static void main(String[] args) {
-        System.out.println("This is a number guessing game. Guess a number from 1 to 100. You have 5 lives");
         int randomNum = (int)(Math.random() * 100) + 1;
         Scanner input = new Scanner(System.in);
         int lives = 5; // number of guesses the user has before a loss
+        System.out.println("This is a number guessing game. Guess a number from 1 to 100. You have " + lives + " lives"  );
         while(lives != 0){
             int guess = input.nextInt(); // gets user input
             if (guess == randomNum) {
@@ -25,12 +25,14 @@ public class NumberGuessingGame {
             } else if(randomNum > guess){
                 System.out.println("Too low!");
                 lives -= 1; // takes away one guess the user can use
+                System.out.println("you have " + lives + " lives");
                 if (lives == 0){
                 System.out.println("You lose!");
             }
             } else if(randomNum < guess){
                 System.out.println("Too high!");
                 lives -= 1; // takes away one guess the user can use
+                System.out.println("you have " + lives + " lives");
                 if (lives == 0){
                 System.out.println("You lose!"); // fail print
             }
