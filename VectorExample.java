@@ -1,7 +1,7 @@
 import java.lang.Thread;
 import java.util.*;
 public class VectorExample {
-    public static void main(String[] args) throws InstantiationException{
+    public static void main(String[] args) throws InterruptedException {
         /*Vector<String> names = new Vector<>();
          names.add("John");
          names.add("Anna");
@@ -18,7 +18,7 @@ public class VectorExample {
         
         for(int i = 0; i < size; i++){
             arrayList.add(i);
-        }
+        };
 
         long end = System.currentTimeMillis();
 
@@ -29,13 +29,15 @@ public class VectorExample {
         
         for(int i = 0; i < size; i++){
             vector.add(i);
-        }
+        };
 
         end = System.currentTimeMillis();
 
         System.out.println("Added " + size + " elements to Vector: " + (end - start) + " ms");
 
-        List<Integer> multithrededList = new ArrayList<>(); 
+        // - - - - - - - - - - // 
+
+        List<Integer> multithrededList = Collections.synchronizedList(new ArrayList<>()); 
         start = System.currentTimeMillis();
 
         Thread t1 = new Thread(() -> {
@@ -53,9 +55,38 @@ public class VectorExample {
         t2.start(); 
         t1.join(); 
         t2.join(); 
+        
         end = System.currentTimeMillis();
-        System.out.println("Added elements to List in a mutithreded way: " + (end - start) + " ms");
+
+        System.out.println("Added elements to ArrayList in a mutithreded way: " + (end - start) + " ms");
         System.out.println("Size is: " + multithrededList.size()); 
+
+       // - - - - - - - - - - // 
+
+        List<Integer> multithrededVector = new Vector<>();
+        start = System.currentTimeMillis();
+
+        t1 = new Thread(() -> {
+            for(int i = 0; i < size; i++){
+            multithrededVector.add(i);
+            };
+        });
+
+        t2 = new Thread(() -> {
+            for(int i = 0; i < size; i++){
+            multithrededVector.add(i);
+            };
+        });
+
+        t1.start();
+        t2.start(); 
+        t1.join(); 
+        t2.join(); 
+
+        end = System.currentTimeMillis();
+
+        System.out.println("Added elements to Vector in a mutithreded way: " + (end - start) + " ms");
+        System.out.println("Size is: " + multithrededVector.size()); 
     }// END MAIN 
 }// END CLASS
 
