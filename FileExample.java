@@ -19,7 +19,8 @@ public class FileExample {
     // ArrayList 
     private static ArrayList<String> tasks = new ArrayList<>();
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+        loadTask();
         // Load Task 
         Scanner sc = new Scanner(System.in); 
         boolean running = true; 
@@ -32,6 +33,7 @@ public class FileExample {
         }
 
         // Save Task
+        saveTask();
         // Close Scanner
 
     }// END OF MAIN
