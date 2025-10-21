@@ -28,8 +28,32 @@ public class FileExample {
         while (running){
             // MENU 
             // ---> Menu List 
+            System.out.println("input the one of the following.");
+            System.out.println("1) view task");
+            System.out.println("2) save task");
+            System.out.println("3) load task");
             // ---> User Input
+            String input = sc.nextLine();
+            System.out.println("You selected: " + input);
             // IF/ELSE or SWITCH for the menu
+            switch (input) {
+                case "1": 
+                System.out.println("You selected view task.");
+                break;
+
+                case "2":
+                System.out.println("You selected save task.");
+                break;
+                case "3":
+                System.out.println("You selected load task.");
+                break;
+                default:
+                System.out.println("Invalid input");
+                break;
+            }
+            // if (input.equals("1")) {
+            //     System.out.println("AAAAAAA");
+            // }
         }
 
         // Save Task
@@ -76,11 +100,13 @@ public class FileExample {
     }
 
     // Function 4 - addTask()     // To add information to the file
+    
     // Function 5 - removeTask()  // To remove information from the file
     // Error Handling 
     
     // - - - - - - - - - OTHER REQUIREMENTS - - - - - - - - - // 
     // Function 6 - check the status of the task
+
     // Function 7 - check the status of the task
     // Function 8 - check the status of the task
 
