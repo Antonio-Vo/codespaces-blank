@@ -46,7 +46,7 @@ public class FileExample {
 
     // Function 1 - loadTask()    // To load the File
     private static void loadTask() throws IOException {
-        File file = new File("File_Name");\
+        File file = new File("File_Name");
         if (file.exists()) {
             Scanner fileReader = new Scanner(file);
             while (fileReader.hasNextLine()) {
@@ -60,7 +60,7 @@ public class FileExample {
     private static void saveTask() throws IOException {
         BufferedWriter writer = new BufferedWriter(new FileWriter("FILE_NAME"));
         for (String task : tasks) {
-            write.write(task);
+            writer.write(task);
             writer.newLine();
         }
         writer.close();
