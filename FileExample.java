@@ -111,14 +111,14 @@ public class FileExample {
         System.out.println(taskAdd);
         
         // https://www.w3schools.com/java/java_files_write.asp
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_NAME))) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_NAME, true))) {
       writer.write("\n" + taskAdd);
       System.out.println("Successfully appended to the file.");
     } catch (IOException e) {
       System.out.println("An error occurred.");
       e.printStackTrace();
     }
-
+    
     }
     // Function 5 - removeTask()  // To remove information from the file
     // Error Handling 
