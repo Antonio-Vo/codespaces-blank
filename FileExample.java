@@ -30,7 +30,7 @@ public class FileExample {
             // ---> Menu List 
             System.out.println("input the one of the following.");
             System.out.println("1) view task");
-            System.out.println("2) save task");
+            System.out.println("2) add task");
             System.out.println("3) load task");
             // ---> User Input
             String input = sc.nextLine();
@@ -42,11 +42,13 @@ public class FileExample {
                 break;
 
                 case "2":
-                System.out.println("You selected save task.");
+                System.out.println("You selected add task.");
+                addTask();
                 break;
                 case "3":
                 System.out.println("You selected load task.");
                 break;
+            
                 default:
                 System.out.println("Invalid input");
                 break;
@@ -59,7 +61,7 @@ public class FileExample {
         // Save Task
         saveTask();
         // Close Scanner
-
+        sc.close();
     }// END OF MAIN
 
     // - - - - - - - - - FUNCTIONS  - - - - - - - - - // 
@@ -72,7 +74,7 @@ public class FileExample {
 
     // Function 1 - loadTask()    // To load the File
     private static void loadTask() throws IOException {
-        File file = new File("File_Name");
+        File file = new File(FILE_NAME);
         if (file.exists()) {
             Scanner fileReader = new Scanner(file);
             while (fileReader.hasNextLine()) {
@@ -84,7 +86,7 @@ public class FileExample {
 
     // Function 2 - saveTask()    // To save the File
     private static void saveTask() throws IOException {
-        BufferedWriter writer = new BufferedWriter(new FileWriter("FILE_NAME"));
+        BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_NAME));
         for (String task : tasks) {
             writer.write(task);
             writer.newLine();
@@ -101,6 +103,23 @@ public class FileExample {
 
     // Function 4 - addTask()     // To add information to the file
     
+    private static void addTask() throws IOException {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Input task");
+        String taskAdd = sc.nextLine();
+        tasks.add(taskAdd);
+        System.out.println(taskAdd);
+        
+        // https://www.w3schools.com/java/java_files_write.asp
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_NAME))) {
+      writer.write("\n" + taskAdd);
+      System.out.println("Successfully appended to the file.");
+    } catch (IOException e) {
+      System.out.println("An error occurred.");
+      e.printStackTrace();
+    }
+
+    }
     // Function 5 - removeTask()  // To remove information from the file
     // Error Handling 
     
