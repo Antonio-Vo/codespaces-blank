@@ -1,8 +1,8 @@
 /*
- * NAME: 
+ * NAME: Antonio Thomas
  * DATE: 
  * VERSION: 
- * SOURCES USED: 
+ * SOURCES USED: // https://www.w3schools.com/java/java_files_write.asp
  * COMMENTS: 
  * 
  * REQUIREMENTS: 
@@ -108,12 +108,12 @@ public class FileExample {
         System.out.println("Input task");
         String taskAdd = sc.nextLine();
         tasks.add(taskAdd);
-        System.out.println(taskAdd);
+        System.out.println("adding:" + taskAdd);
         
         // https://www.w3schools.com/java/java_files_write.asp
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_NAME, true))) {
-      writer.write("\n" + taskAdd);
-      System.out.println("Successfully appended to the file.");
+      writer.write("\n" + (tasks.size()) + ") " + taskAdd);
+      System.out.println("Successfully added task to the file.");
     } catch (IOException e) {
       System.out.println("An error occurred.");
       e.printStackTrace();
@@ -121,6 +121,13 @@ public class FileExample {
     
     }
     // Function 5 - removeTask()  // To remove information from the file
+    private static void removeTask() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Input task number to remove");
+        String taskRemove = sc.nextLine();
+        tasks.remove(taskRemove);
+        System.out.println("removing: "+ taskRemove);
+    }
     // Error Handling 
     
     // - - - - - - - - - OTHER REQUIREMENTS - - - - - - - - - // 
