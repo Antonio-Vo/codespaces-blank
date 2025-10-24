@@ -1,8 +1,9 @@
 /*
- * NAME: Antonio Thomas
+// look up the song Sixteen tons
+ * NAME: 
  * DATE: 
  * VERSION: 
- * SOURCES USED: // https://www.w3schools.com/java/java_files_write.asp
+ * SOURCES USED: 
  * COMMENTS: 
  * 
  * REQUIREMENTS: 
@@ -108,12 +109,12 @@ public class FileExample {
         System.out.println("Input task");
         String taskAdd = sc.nextLine();
         tasks.add(taskAdd);
-        System.out.println("adding:" + taskAdd);
+        System.out.println(taskAdd);
         
         // https://www.w3schools.com/java/java_files_write.asp
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_NAME, true))) {
       writer.write("\n" + (tasks.size()) + ") " + taskAdd);
-      System.out.println("Successfully added task to the file.");
+      System.out.println("Successfully appended to the file.");
     } catch (IOException e) {
       System.out.println("An error occurred.");
       e.printStackTrace();
@@ -121,13 +122,6 @@ public class FileExample {
     
     }
     // Function 5 - removeTask()  // To remove information from the file
-    private static void removeTask() {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Input task number to remove");
-        String taskRemove = sc.nextLine();
-        tasks.remove(taskRemove);
-        System.out.println("removing: "+ taskRemove);
-    }
     // Error Handling 
     
     // - - - - - - - - - OTHER REQUIREMENTS - - - - - - - - - // 
