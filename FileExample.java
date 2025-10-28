@@ -32,7 +32,7 @@ public class FileExample {
             System.out.println("input the one of the following.");
             System.out.println("1) view task");
             System.out.println("2) add task");
-            System.out.println("3) load task");
+            System.out.println("3) remove task");
             // ---> User Input
             String input = sc.nextLine();
             System.out.println("You selected: " + input);
@@ -40,6 +40,7 @@ public class FileExample {
             switch (input) {
                 case "1": 
                 System.out.println("You selected view task.");
+                viewTask();
                 break;
 
                 case "2":
@@ -47,7 +48,8 @@ public class FileExample {
                 addTask();
                 break;
                 case "3":
-                System.out.println("You selected load task.");
+                System.out.println("You selected remove task.");
+                removeTask();
                 break;
             
                 default:
@@ -74,16 +76,24 @@ public class FileExample {
      */
 
     // Function 1 - loadTask()    // To load the File
-    private static void loadTask() throws IOException {
-        File file = new File(FILE_NAME);
-        if (file.exists()) {
-            Scanner fileReader = new Scanner(file);
-            while (fileReader.hasNextLine()) {
-                tasks.add(fileReader.nextLine());
+    private static void loadTask() {
+    tasks = new ArrayList<>();
+    try (BufferedReader reader = new BufferedReader(new FileReader(FILE_NAME))) {
+        String line;
+        while ((line = reader.readLine()) != null) {
+            line = line.trim();
+            if (!line.isBlank()) {
+                // Remove leading number and ") " if present (e.g., "1) task text")
+                line = line.replaceFirst("^\\d+\\)\\s*", "");
+                tasks.add(line);
             }
-            fileReader.close();
         }
+    } catch (IOException e) {
+        System.out.println("No existing task file found. Starting new list.");
     }
+}
+
+
 
     // Function 2 - saveTask()    // To save the File
     private static void saveTask() throws IOException {
@@ -122,6 +132,32 @@ public class FileExample {
     
     }
     // Function 5 - removeTask()  // To remove information from the file
+    private static void removeTask() {
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Enter the task number to remove:");
+    int taskNumber = sc.nextInt();
+    sc.nextLine(); 
+
+    
+    if (taskNumber < 1 || taskNumber > tasks.size()) {
+        System.out.println("Invalid task number.");
+        return;
+    }
+
+    String removed = tasks.remove(taskNumber - 1);
+    System.out.println("Removed: " + removed);
+
+    
+    try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_NAME, false))) {
+        for (int i = 0; i < tasks.size(); i++) {
+            writer.write((i + 1) + ") " + tasks.get(i) + "\n");
+        }
+    } catch (IOException e) {
+        System.out.println("An error occurred while updating the file.");
+        e.printStackTrace();
+    }
+}
+
     // Error Handling 
     
     // - - - - - - - - - OTHER REQUIREMENTS - - - - - - - - - // 
