@@ -1,9 +1,9 @@
 /*
 // look up the song Sixteen tons
- * NAME: 
+ * NAME: Antonio Thomas
  * DATE: 
  * VERSION: 
- * SOURCES USED: 
+ * SOURCES USED: // https://www.w3schools.com/java/java_files_write.asp | https://www.w3schools.com/java/java_strings_specchars.asp |
  * COMMENTS: 
  * 
  * REQUIREMENTS: 
@@ -83,7 +83,7 @@ public class FileExample {
         while ((line = reader.readLine()) != null) {
             line = line.trim();
             if (!line.isBlank()) {
-                // Remove leading number and ") " if present (e.g., "1) task text")
+                // Remove task number and ")"
                 line = line.replaceFirst("^\\d+\\)\\s*", "");
                 tasks.add(line);
             }
@@ -162,7 +162,15 @@ public class FileExample {
     
     // - - - - - - - - - OTHER REQUIREMENTS - - - - - - - - - // 
     // Function 6 - check the status of the task
-
+    private static void statusTask(){
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Enter the task number to edit the status:");
+    int taskStatus = sc.nextInt();
+    sc.nextLine(); 
+    Scanner stat = new Scanner(System.in);
+    //https://www.w3schools.com/java/java_strings_specchars.asp
+    System.out.println("Input \"1\" to check as done. Input \"2\" to uncheck a task");
+    }
     // Function 7 - check the status of the task
     // Function 8 - check the status of the task
 
