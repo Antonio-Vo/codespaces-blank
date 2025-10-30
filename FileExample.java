@@ -33,6 +33,9 @@ public class FileExample {
             System.out.println("1) view task");
             System.out.println("2) add task");
             System.out.println("3) remove task");
+            System.out.println("4) set task as pending");
+            System.out.println("5) set task completed");
+            System.out.println("6) check task status");
             // ---> User Input
             String input = sc.nextLine();
             System.out.println("You selected: " + input);
@@ -51,7 +54,16 @@ public class FileExample {
                 System.out.println("You selected remove task.");
                 removeTask();
                 break;
-            
+                case "4":
+                System.out.println("set task as pending");
+                break;
+                case "5":
+                System.out.println("set task as completed");
+                break;
+                case "6":
+                System.out.println("check task status.");
+                break;
+
                 default:
                 System.out.println("Invalid input");
                 break;
@@ -113,7 +125,8 @@ public class FileExample {
     }
 
     // Function 4 - addTask()     // To add information to the file
-    
+    //DON'T FORGET!!!!
+    // Make this class public for task status
     private static void addTask() throws IOException {
         Scanner sc = new Scanner(System.in);
         System.out.println("Input task");
@@ -162,17 +175,24 @@ public class FileExample {
     
     // - - - - - - - - - OTHER REQUIREMENTS - - - - - - - - - // 
     // Function 6 - check the status of the task
-    private static void statusTask(){
+    private static void pendingTask(){
     Scanner sc = new Scanner(System.in);
-    System.out.println("Enter the task number to edit the status:");
-    int taskStatus = sc.nextInt();
-    sc.nextLine(); 
-    Scanner stat = new Scanner(System.in);
-    //https://www.w3schools.com/java/java_strings_specchars.asp
-    System.out.println("Input \"1\" to check as done. Input \"2\" to uncheck a task");
+    System.out.println("Enter the task number to check the status:");
+    int taskPending = sc.nextInt();
+    
     }
     // Function 7 - check the status of the task
+     private static void completedTask(){
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Enter the task number to mark as complete:");
+    int taskDone = sc.nextInt();
+
+    }
     // Function 8 - check the status of the task
+    private static void statusTask(){
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Enter the task number to check the status:");
+    }
 
     // - - - - - - - - - ADDITIONAL FEATURES - - - - - - - - - // 
 
