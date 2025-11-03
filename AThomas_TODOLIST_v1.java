@@ -1,10 +1,9 @@
 /*
-// look up the song Sixteen tons
  * NAME: Antonio Thomas
- * DATE: 
- * VERSION: 
- * SOURCES USED: // https://www.w3schools.com/java/java_files_write.asp | https://www.w3schools.com/java/java_strings_specchars.asp |
- * COMMENTS: 
+ * DATE: 11/2/2025
+ * VERSION: v1
+ * SOURCES USED: // https://www.w3schools.com/java/java_files_write.asp | https://www.w3schools.com/java/java_strings_specchars.asp | https://www.w3schools.com/jsref/jsref_replace.asp
+ * COMMENTS: Program that can add, remove, and tracks task completion 
  * 
  * REQUIREMENTS: 
 */
@@ -13,7 +12,7 @@
 import java.io.*; 
 import java.util.*; 
 
-public class FileExample {
+public class AThomas_TODOLIST_v1 {
     
     // File Name
     private static final String FILE_NAME = "task.txt";
@@ -36,6 +35,7 @@ public class FileExample {
             System.out.println("4) set task as pending");
             System.out.println("5) set task completed");
             System.out.println("6) check task status");
+
             // ---> User Input
             String input = sc.nextLine();
             System.out.println("You selected: " + input);
@@ -56,12 +56,15 @@ public class FileExample {
                 break;
                 case "4":
                 System.out.println("set task as pending");
+                pendingTask();
                 break;
                 case "5":
                 System.out.println("set task as completed");
+                completedTask();
                 break;
                 case "6":
                 System.out.println("check task status.");
+                statusTask();
                 break;
 
                 default:
@@ -108,7 +111,7 @@ public class FileExample {
 
 
     // Function 2 - saveTask()    // To save the File
-    private static void saveTask() throws IOException {
+    public static void saveTask() throws IOException {
         BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_NAME));
         for (String task : tasks) {
             writer.write(task);
@@ -133,10 +136,11 @@ public class FileExample {
         String taskAdd = sc.nextLine();
         tasks.add(taskAdd);
         System.out.println(taskAdd);
+        String status = "pending";
         
         // https://www.w3schools.com/java/java_files_write.asp
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_NAME, true))) {
-      writer.write("\n" + (tasks.size()) + ") " + taskAdd);
+      writer.write("\n" + (tasks.size()) + ") " + taskAdd + " - " + status);
       System.out.println("Successfully appended to the file.");
     } catch (IOException e) {
       System.out.println("An error occurred.");
@@ -175,24 +179,72 @@ public class FileExample {
     
     // - - - - - - - - - OTHER REQUIREMENTS - - - - - - - - - // 
     // Function 6 - check the status of the task
-    private static void pendingTask(){
+    private static void pendingTask() throws IOException{
     Scanner sc = new Scanner(System.in);
-    System.out.println("Enter the task number to check the status:");
-    int taskPending = sc.nextInt();
+        System.out.println("Enter the task number to mark as pending:");
+        int taskNumber = sc.nextInt();
+        sc.nextLine();
+        
+        if (taskNumber < 1 || taskNumber > tasks.size()) {
+            System.out.println("Invalid task number.");
+            return;
+        }
+        
+        String originalTask = tasks.get(taskNumber - 1);
+        
+        if (originalTask.contains(" - completed")) {
+           // https://www.w3schools.com/jsref/jsref_replace.asp
+            String updatedTask = originalTask.replace(" - completed", " - pending");
+            tasks.set(taskNumber - 1, updatedTask);
+            saveTask();
+            System.out.println("Task marked as pending successfully.");
+        }
     
     }
     // Function 7 - check the status of the task
-     private static void completedTask(){
-    Scanner sc = new Scanner(System.in);
-    System.out.println("Enter the task number to mark as complete:");
-    int taskDone = sc.nextInt();
-
+    private static void completedTask() throws IOException {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the task number to mark as complete:");
+        int taskNumber = sc.nextInt();
+        sc.nextLine();
+        
+        if (taskNumber < 1 || taskNumber > tasks.size()) {
+            System.out.println("Invalid task number.");
+            return;
+        }
+        
+        String originalTask = tasks.get(taskNumber - 1);
+        
+        if (originalTask.contains(" - pending")) {
+           // https://www.w3schools.com/jsref/jsref_replace.asp
+            String updatedTask = originalTask.replace(" - pending", " - completed");
+            tasks.set(taskNumber - 1, updatedTask);
+            saveTask();
+            System.out.println("Task marked as completed successfully.");
+        }
+        
     }
     // Function 8 - check the status of the task
-    private static void statusTask(){
+    private static void statusTask() {
     Scanner sc = new Scanner(System.in);
     System.out.println("Enter the task number to check the status:");
+    int taskNumber = sc.nextInt();
+    sc.nextLine();
+
+    if (taskNumber < 1 || taskNumber > tasks.size()) {
+        System.out.println("Invalid task number.");
+        return;
     }
+
+    String task = tasks.get(taskNumber - 1);
+    if (task.contains(" - completed")) {
+        System.out.println("Status: completed");
+    } else if (task.contains(" - pending")) {
+        System.out.println("Status: pending");
+    } else {
+        System.out.println("Status: unknown");
+    }
+}
 
     // - - - - - - - - - ADDITIONAL FEATURES - - - - - - - - - // 
 
@@ -200,4 +252,4 @@ public class FileExample {
     // Function 10 - searchTask() 
     // Function 11 - sortTask() 
 
-}// END OF CLASS 
+}// END OF CLASS
