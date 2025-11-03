@@ -112,9 +112,9 @@ public class AThomas_TODOLIST_v1 {
 
     // Function 2 - saveTask()    // To save the File
     public static void saveTask() throws IOException {
-        BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_NAME));
-        for (String task : tasks) {
-            writer.write(task);
+        BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_NAME, false));
+        for (int i = 0; i < tasks.size(); i++) {
+            writer.write((i + 1) + ") " + tasks.get(i));
             writer.newLine();
         }
         writer.close();
@@ -130,24 +130,16 @@ public class AThomas_TODOLIST_v1 {
     // Function 4 - addTask()     // To add information to the file
     //DON'T FORGET!!!!
     // Make this class public for task status
-    private static void addTask() throws IOException {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Input task");
-        String taskAdd = sc.nextLine();
-        tasks.add(taskAdd);
-        System.out.println(taskAdd);
-        String status = "pending";
-        
-        // https://www.w3schools.com/java/java_files_write.asp
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_NAME, true))) {
-      writer.write("\n" + (tasks.size()) + ") " + taskAdd + " - " + status);
-      System.out.println("Successfully appended to the file.");
-    } catch (IOException e) {
-      System.out.println("An error occurred.");
-      e.printStackTrace();
-    }
-    
-    }
+        public static void addTask() throws IOException {
+                Scanner sc = new Scanner(System.in);
+                System.out.println("Input task");
+                String taskAdd = sc.nextLine();
+                String taskWithStatus = taskAdd + " - pending";
+                tasks.add(taskWithStatus);
+                // persist the list in consistent numbered format
+                saveTask();
+                System.out.println("Task added: " + taskWithStatus);
+        }
     // Function 5 - removeTask()  // To remove information from the file
     private static void removeTask() {
     Scanner sc = new Scanner(System.in);
@@ -179,28 +171,32 @@ public class AThomas_TODOLIST_v1 {
     
     // - - - - - - - - - OTHER REQUIREMENTS - - - - - - - - - // 
     // Function 6 - check the status of the task
-    private static void pendingTask() throws IOException{
+    private static void pendingTask() throws IOException {
     Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the task number to mark as pending:");
-        int taskNumber = sc.nextInt();
-        sc.nextLine();
-        
-        if (taskNumber < 1 || taskNumber > tasks.size()) {
-            System.out.println("Invalid task number.");
-            return;
-        }
-        
+    System.out.println("Enter the task number to mark as pending:");
+    int taskNumber = sc.nextInt();
+    sc.nextLine();
+
+    if (taskNumber < 1 || taskNumber > tasks.size()) {
+        System.out.println("Invalid task number.");
+        return;
+    }
+
         String originalTask = tasks.get(taskNumber - 1);
-        
         if (originalTask.contains(" - completed")) {
-           // https://www.w3schools.com/jsref/jsref_replace.asp
             String updatedTask = originalTask.replace(" - completed", " - pending");
             tasks.set(taskNumber - 1, updatedTask);
             saveTask();
             System.out.println("Task marked as pending successfully.");
+        } else if (!originalTask.contains(" - pending") && !originalTask.contains(" - completed")) {
+            String updatedTask = originalTask + " - pending";
+            tasks.set(taskNumber - 1, updatedTask);
+            saveTask();
+            System.out.println("Task updated with pending status.");
+        } else {
+            System.out.println("Task is already pending.");
         }
-    
-    }
+}
     // Function 7 - check the status of the task
     private static void completedTask() throws IOException {
         Scanner sc = new Scanner(System.in);
@@ -214,13 +210,18 @@ public class AThomas_TODOLIST_v1 {
         }
         
         String originalTask = tasks.get(taskNumber - 1);
-        
         if (originalTask.contains(" - pending")) {
-           // https://www.w3schools.com/jsref/jsref_replace.asp
             String updatedTask = originalTask.replace(" - pending", " - completed");
             tasks.set(taskNumber - 1, updatedTask);
             saveTask();
             System.out.println("Task marked as completed successfully.");
+        } else if (!originalTask.contains(" - completed") && !originalTask.contains(" - pending")) {
+            String updatedTask = originalTask + " - completed";
+            tasks.set(taskNumber - 1, updatedTask);
+            saveTask();
+            System.out.println("Task updated with completed status.");
+        } else {
+            System.out.println("Task is already completed.");
         }
         
     }
