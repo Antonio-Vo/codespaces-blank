@@ -6,7 +6,9 @@ public class codeChallngenovtwozero {
         numbers.put("Ant", "213-124-rara");
         numbers.put("bnt", "213-976-rara");
         numbers.put("cnt", "213-975-rara");
-        numbers.put("ent", "213-269-rara");
+        numbers.put("ent", "213-269-raraaaaaa");
+        numbers.put(null, "121212");
+        System.out.println(numbers.get(null));
         System.out.println(numbers.get("Ant"));
         System.out.println(numbers.get("bnt"));
         System.out.println(numbers.get("cnt"));
@@ -16,3 +18,20 @@ public class codeChallngenovtwozero {
         System.out.println(numbers.containsKey("bnt"));;
     }
 }
+
+
+
+// below is for the  self exploation and not important for this program
+// 
+// map store vaule pairs, set stores only unique keys, list stores keys including duplicates 
+//
+
+
+//2
+//
+// Keys are link to respective vaules in the map
+// it gets overwriten
+// the map works as normal 
+
+
+//3
