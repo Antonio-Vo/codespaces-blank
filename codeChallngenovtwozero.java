@@ -18,7 +18,7 @@ public class codeChallngenovtwozero {
         System.out.println(numbers.containsKey("bnt"));;
     }
 }
-
+// I have been distracted and didn't complete many of the questions
 
 
 // below is for the  self exploation and not important for this program
@@ -27,11 +27,14 @@ public class codeChallngenovtwozero {
 //
 
 
-//2
+//Section 2:
 //
-// Keys are link to respective vaules in the map
-// it gets overwriten
-// the map works as normal 
+// Q5. Keys are link to respective vaules in the map
+// Q6. it gets overwriten
+// Q7. the map works as normal 
 
 
 //3
+
+//Q10. with .get()
+//Q12. with .remove()
