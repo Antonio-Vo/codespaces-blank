@@ -1,0 +1,165 @@
+body {
+    font-family: "Righteous", sans-serif;
+    font-family: "old-standard-tt-regular", serif;
+    background: hsla(43, 74%, 49%, 1);
+/* creates a radial(round) gradient that goes from a gold color to a black color. */
+    background: radial-gradient(circle, hsla(43, 74%, 49%, 1) 0%, hsla(0, 0%, 8%, 1) 96%);
+    
+    background: -moz-radial-gradient(circle, hsla(43, 74%, 49%, 1) 0%, hsla(0, 0%, 8%, 1) 96%);
+    
+    background: -webkit-radial-gradient(circle, hsla(43, 74%, 49%, 1) 0%, hsla(0, 0%, 8%, 1) 96%);
+    
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#DAA520", endColorstr="#141414", GradientType=1 );
+    margin: 0; 
+    height: 100vh; 
+    display: flex;
+    flex-direction: column;
+}
+
+.banner {
+    background-color: green;
+    text-align: center;
+    height: 70px;
+    width: 100%; 
+}
+/* Was meant to be for the sidebar and banner but at some point the entire body was coverd in the content class so don't change it. The error has been worked arounded  */
+.content {
+    display: flex; 
+    flex-grow: 1; 
+    max-height: 200px;
+}
+
+#sideBar {
+    background-size: cover;
+    background-position: center;
+}
+
+main {
+    flex-grow: 1; 
+    padding: 20px;
+    font-size: 40px;
+}
+
+#submit{
+    border: solid black 1px;
+}
+
+#loreNav{
+    border: solid black 1px;
+    background-size: cover;
+    background-position: center;
+    max-width: fit-content;
+    min-width: fit-content;
+    height: fit-content;
+    font-size: 20px;
+    text-align: justify;
+}
+/* below is the main font for lore.html. next is the h1 font used for names */
+#lore{
+    font-family: "IM Fell English SC", serif;
+}
+
+#lore h1{
+    font-family: "Diplomata SC", serif;
+    font-weight: 400;
+    font-style: normal; 
+    font-size: 30px;
+}
+
+/* Debug later if the font is still not working on the nav in lore.html. I tried to fix it but it did not work.
+only solution I dont was removing font-family form both nav and body */
+
+
+/* I could not get the font to work on the nav in html.index so I changed the font to the font used in index.html. */
+/* !important is needed to fix the nav font on the home page(index.html)
+body #sideBar nav {
+    font-family: "Diplomata SC", serif !important; 
+}
+
+#fontFix {
+    font-family: "Diplomata SC" , serif;  
+} */
+
+/* nav {
+font-family: Righteous, serif;
+} */
+
+nav {
+     font-family: "Diplomata SC", serif;  
+
+}
+
+.old-standard-tt-regular {
+    font-family: "Old Standard TT", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .old-standard-tt-bold {
+    font-family: "Old Standard TT", serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  .old-standard-tt-regular-italic {
+    font-family: "Old Standard TT", serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+    .old-standard-tt-bold-italic {
+        font-family: "Old Standard TT", serif;
+        font-weight: 700;
+        font-style: italic;
+    } 
+/* as a reminder, this label is for the progress bar */
+    label[for="nextPhase"] {
+        color: red;
+    }
+/* This is for the road map used on the home page. this makes the image larger on hover*/
+    #roadMap:hover {
+        transform: scale(1.2); 
+        transition: transform 0.5s ease; 
+    }
+
+@media (max-width: 768px) {
+    body {
+        font-size: 14px; /* Reduce font size */
+    }
+
+    #roadMap {
+        width: 80%; /* Adjust the size of the image */
+
+    }
+
+    #sideBar {
+        display: none; /* Hide the sidebar on small screens if needed */
+    }
+
+    main {
+        padding: 10px; /* Reduce padding for smaller screens */
+    }
+}
+
+/* Media query for very small screens ) */
+@media (max-width: 480px) {
+    body {
+        font-size: 12px; /* Further reduce font size */
+    }
+
+    #roadMap {
+        width: 100%; /* Make the image take up the full width */
+    }
+}
+
+
+/* Hide #smallNav by default */
+#smallNav {
+    display: none;
+}
+
+/* Show #smallNav only on small screens (e.g., max-width: 768px) */
+@media (max-width: 768px) {
+    #smallNav {
+        display: block; /* Make it visible */
+    }
+}

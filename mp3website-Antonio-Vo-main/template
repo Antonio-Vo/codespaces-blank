@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="style.css" />
+    </head>
+    <body>
+        <div class="banner">Banner Content</div>
+        <div class="content">
+            <div class="sideBar">
+                <label for="nextPhase">Next Update:</label> 
+                <progress id="nextPhase" value="10" max="100"></progress>
+                <nav>
+                    <ul>
+                        <a href="index.html"><li>home</li></a>
+                        <a href="feedback.html"><li>suggestions</li></a>
+                        <a href="lore.html"><li>Lore</li></a>
+                        <li>Reddit</li>
+                        <li>Discord</li>
+                    </ul>
+                </nav>
+            </div>
+            <main></main>
+        </div>
+        <footer></footer>
+    </body>
+</html>
