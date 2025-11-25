@@ -1,0 +1,168 @@
+header {
+    font-family: 'LasvishyYours-Regular';
+}
+h1 {
+    text-align: center;
+    font-family: 'LasvishyYours-Regular';
+}
+
+h2 {
+    text-align: center;
+}
+
+body {
+    background-color: #FCEDFD;
+    text-align: center;
+    font-size: 35px;
+    color: #83C9F4;
+    font-family: 'Poppins-light', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+p {
+    font-family: 'Poppins-light';
+    font-size: 20px;
+}
+
+a {
+    color: #83C9F4;
+}
+
+footer {
+    background-color: #4D5057;
+    color: #CDDFA0;
+    font-family: 'Oswald-light';
+    padding: 10px 0;
+    margin-top: auto;
+}
+
+table {
+    width: 100vw;
+    border-collapse: collapse;
+}
+
+
+
+.frame {
+    width: 100vw;
+    overflow: hidden;
+
+}
+
+
+#imgL {
+    display: block;
+    margin-right: auto;
+    width: 10vw;
+}
+
+#imgR {
+    display: block;
+    margin-left: auto;
+    width: 20vw;
+}
+
+.house {
+    display: flex;
+    /* align-items: center; */
+}
+
+.mainText {
+    font-size: 30px;
+    line-height: 1.5;
+}
+
+/* th, img {
+    width: 100%;  Make images take up 100% of the cell's width 
+    height: auto;  Maintain aspect ratio 
+    object-fit: cover;  This makes sure the image covers the area without distortion 
+} */
+
+img {
+    max-width: 30vw;
+}
+
+#galLeft, #galRight {
+    display: flex;
+    flex-direction: column; 
+}
+
+#galLeft img, #galRight img {
+    width: 100%; 
+    height: auto; 
+}
+
+.gal-container {
+    position: relative;
+    justify-content: space-between;
+    display: flex;
+    grid-template-columns: 1fr 1fr; 
+    
+    width: 100%;
+}
+
+#textPro {
+    text-align: center;
+}
+
+.services-container {
+    display: flex;
+    
+    justify-content: space-between;
+    width: 100%;
+    height: 100vh;
+}
+
+.image-box {
+position: relative;
+width: 90%;
+height: 100vh;
+}
+
+.image-box img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.overlay {
+    position: absolute;
+    top: 50%; /* Position the text in the middle of the image */
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the text both vertically and horizontally */
+    color: white;
+    font-size: 24px; /* Adjust text size */
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Add shadow to text for better visibility */
+    text-align: center;
+    width: 80%; /* Optional: Control the width of the overlay text */
+}
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100vh;
+}
+
+.contact-container img {
+    width: 20vw;
+    height: 30vh;
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+}
+@font-face {
+    font-family: 'LasvishyYours-Regular';
+    src: url('fonts/LavishlyYours-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Poppins-light';
+    src: url('fonts/Poppins-Light.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Oswald-light';
+    src: url('fonts/Oswald-Light.ttf') format('truetype');
+}
