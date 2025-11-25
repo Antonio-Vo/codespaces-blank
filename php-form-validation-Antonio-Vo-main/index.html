@@ -1,0 +1,76 @@
+ <!--/* DO NOT DELETE THIS COMMENT
+    To run php in codespaces after file is converted to php.
+    Open terminal
+    Type: php -S localhost:8000
+    Hit enter
+    If it does not open in browser, go to new tab and type URL http://localhost:8000/index.php
+*/-->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="PHP Form Validation">
+        <meta name="author" content="Name">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PHP Forms</title>
+        
+        <link href="style.css" rel="stylesheet">
+        
+        
+    </head>
+ <body>
+      <h1>User Profile Form</h1>
+    <!-- Main form for user profile creation -->
+    
+        <!-- Task 1: Username - Minimum 3 characters -->
+        <!-- Create a text input for the username with the id 'username' -->
+        <!-- Requirement: Minimum 3 characters -->
+         <form>
+          <label for="username">User Name:</label>
+          <input type="text" id="username" name="username">
+        <br>
+        
+
+        <!-- Task 2: Email - Must be a valid email format -->
+        <!-- Create an email input with the id 'email' -->
+        <!-- Requirement: Must be a valid email address -->
+       <label for="email">Email:</label>
+          <input type="text" id="email" name="email">
+          <br>
+
+        <!-- Task 3: Phone Number - 10 digits in 123-456-7890 format -->
+        <!-- Create a text input for the phone number with the id 'phone' -->
+        <!-- Requirement: 10 digits in the format 123-456-7890 -->
+        <label for="phone">Phone Number with xxx-xxx-xxxx format:</label>
+          <input type="text" id="phone" name="phone">
+          <br>
+
+        <!-- Task 4: Password - Minimum 8 characters, 1 uppercase, 1 lowercase, 1 number, 1 special character -->
+        <!-- Create a password input with the id 'password' -->
+        <!-- Requirement: At least 8 characters, including 1 uppercase letter, 1 lowercase letter, 1 number, and 1 special character -->
+         <label for="password">Password:</label>
+          <input type="text" id="password" name="password">
+          <br>
+
+        <!-- Task 5: Confirm Password - Must match Password -->
+        <!-- Create a password input for password confirmation with the id 'confirm-password' -->
+        <!-- Requirement: Must match the Password field -->
+      <label for="confirm-password">Confirm Password:</label>
+          <input type="text" id="confirm-password" name="confirm-password">
+          <br>
+     
+
+        <!-- Task 6: Error Message Container -->
+        <!-- Create a div to display error messages with the id 'error-message' -->
+        <!-- <div id="error-message"></div>
+        <br> -->
+        <!-- Submit Button -->
+         <button type="submit" id="submit-button">submit</button>
+            </form>
+
+            
+     
+   <script src="script.js"></script>
+    </body>
+</html>
