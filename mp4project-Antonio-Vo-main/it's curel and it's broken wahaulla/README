@@ -1,0 +1,7 @@
+steps check list:
+
+DONE! Game state	Expand state.json	Show coins/cards/turn
+DONE! Start game	Add start logic	Add “Start Game” button
+Actions	Implement in actions.php	Add action buttons
+Blocking	Pending/block logic	Block/counter UI
+End game	Winner check	Show winner

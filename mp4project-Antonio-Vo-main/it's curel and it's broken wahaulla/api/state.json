@@ -1,0 +1,19 @@
+{
+  "players": [
+    { "name": null, "id": null, "lastSeen": null, "coins": null, "cards": [], "alive": null },
+    { "name": null, "id": null, "lastSeen": null, "coins": null, "cards": [], "alive": null },
+    { "name": null, "id": null, "lastSeen": null, "coins": null, "cards": [], "alive": null },
+    { "name": null, "id": null, "lastSeen": null, "coins": null, "cards": [], "alive": null }
+  ],
+  "deck": [],
+  "log": [],
+  "turn": null,
+  "status": "waiting",
+  "winner": null,
+  "pendingAction": {
+    "type": "foreignAid",
+    "actor": 2,
+    "blockableBy": [0,1,3],
+    "status": "waiting"
+  }
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Loser Feedback</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="style.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Diplomata+SC&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <img src="Images/Designer.jpeg" alt="Welcome to Loser City at War" class="content">
+        <!-- Do NOT close or remove the below div. I don't know why but the page DOES NOT LIKE IT and EVERY header and paragraph will be in the wrong place  -->
+        <div class="content"> 
+            <div id="sideBar">
+                <label for="nextPhase">Next Update:</label> 
+                <progress id="nextPhase" value="10" max="100"></progress>
+                <nav>
+                    <ul>
+                        <a href="index.html"><li>Home</li></a>
+                        <a href="feedback.html"><li>Feedback</li></a>
+                        <a href="lore.html"><li>Lore</li></a>
+                        <!-- Discord and reddit for the mod can't be linked Yet -->
+                        <a href="https://www.reddit.com/"><li>Reddit</li></a>
+                        <a href="https://discord.com/"><li>Discord</li></a>
+                    </ul>
+                </nav>
+            </div>
+            <main>
+                <div id="smallNav">
+                    <nav>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="feedback.html">Feedback</a></li>
+                            <li><a href="lore.html">Lore</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div id="submit">
+                    <p>Submit ideas for future updates here! You can also submit bug reports and typos. ideas for update can be voted on every 3-5 months via our Discord!</p>
+                </div>
+                
+                <div id="forms">
+                    <!-- NonFunctional forms for now. -->
+                <Form>
+                    <label for="feedback">Feedback:</label>
+                    <textarea id="feedback" name="feedback" rows="4" cols="50"></textarea>
+                    <br>
+                    <input type="submit" value="Submit">
+                </Form>
+                <Form>
+                    <label for="feedback">Bug Report:</label>
+                    <textarea id="bug" name="bug" rows="4" cols="50"></textarea>
+                    <br>
+                    <input type="submit" value="Submit">
+                </Form>
+                </div>
+                <p>Thank you for your feedback!</p>
+                <p>Note: What Idea gets voted on dependes on suggestion frequancy and devloper intrest. A populor idea while likly, is not gurentued to be algabile for a vote.</p>
+                <p>Note: The dev team is small and we are all volunteers. We will do our best to respond to your feedback, but please be patient.</p>
+                <!-- the vote div is a placeholder for the vote system. It will be replaced with a real vote system in the future. -->
+                <div id="vote"></div>
+            </main>
+        </div>
+        <footer> <link href="form.js" rel="script" type="text/javascript"></link>
+            <script src="form.js"></script>
+        <link href="form.php" rel="script" type="text/php"></link>
+            <script src="form.php"></script>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Coup Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <audio id="background-music" loop autoplay>
+    <source src="Deposition_main_theme_1.wav" type="audio/wav">
+    Your browser does not support the audio element.
+  </audio>
+  <h1>Coup Game</h1>
+  <div id="error"></div>
+  <button id="start-game" onclick="startGame()">Start Game</button>
+  <div id="slots"></div>
+  <div id="my-cards"></div>
+  <div id="actions">
+    <button id="income" onclick="income()">
+      <img src="images/income.JPG" alt="Income">
+      <p>Income</p>
+    </button>
+    <button id="foreign-aid" onclick="foreignAid()">
+      <img src="images/foreign_aid.JPG" alt="Foreign Aid">
+      <p>Foreign Aid</p>
+    </button>
+    <button id="coup" onclick="coup()">
+      <img src="images/coup.JPG" alt="Coup">
+      <p>Coup</p>
+    </button>
+    <button id="tax" onclick="tax()">
+      <img src="images/tax.JPG" alt="Tax">
+      <p>Tax</p>
+    </button>
+    <button id="assassinate" onclick="assassinate()">
+      <img src="images/assassinate.JPG" alt="Assassinate">
+      <p>Assassinate</p>
+    </button>
+    <button id="exchange" onclick="exchange()">
+      <img src="images/exchange.JPG" alt="Exchange">
+      <p>Exchange</p>
+    </button>
+    <button id="steal" onclick="steal()">
+      <img src="images/steal.JPG" alt="Steal">
+      <p>Steal</p>
+    </button>
+    <button id="block" onclick="blockAction()">
+      <img src="images/block.JPG" alt="Block">
+      <p>Block</p>
+    </button>
+    <button id="challenge" onclick="challenge()">
+      <img src="images/challenge.JPG" alt="Challenge">
+      <p>Challenge</p>
+    </button>
+  </div>
+  <div id="log"></div>
+  <script src="game.js"></script>
+</body>
+</html>
+

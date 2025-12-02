@@ -1,0 +1,10 @@
+button img{
+    width: 200px;
+    height: 80px;
+    object-fit: cover;
+}
+
+#log {
+    max-height:200px; 
+    overflow-y:auto;
+}
