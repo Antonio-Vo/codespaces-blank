@@ -39,7 +39,7 @@ import java.util.*;
 public class SimpleCalculatorStarterCode{ 
     public static void main(String[] args) {
         double result = 0;
-        // ✔️ User Input - User Input need a scanner
+        //  User Input - User Input need a scanner
         Scanner input = new Scanner(System.in);  
         System.out.println("Enter name: ");
         String name = input.nextLine();
