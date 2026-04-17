@@ -24,7 +24,6 @@ public class AThomas_TODOLIST_v1 {
         // Load Task 
         Scanner sc = new Scanner(System.in); 
         boolean running = true; 
-
         while (running){
             // MENU 
             // ---> Menu List 
@@ -142,10 +141,12 @@ public class AThomas_TODOLIST_v1 {
         }
     // Function 5 - removeTask()  // To remove information from the file
     private static void removeTask() {
+        try{
     Scanner sc = new Scanner(System.in);
     System.out.println("Enter the task number to remove:");
     int taskNumber = sc.nextInt();
     sc.nextLine(); 
+        
 
     
     if (taskNumber < 1 || taskNumber > tasks.size()) {
@@ -165,6 +166,10 @@ public class AThomas_TODOLIST_v1 {
         System.out.println("An error occurred while updating the file.");
         e.printStackTrace();
     }
+    } catch(InputMismatchException e) {
+         System.err.println("Invailed input");
+         removeTask();
+        }
 }
 
     // Error Handling 
@@ -172,6 +177,7 @@ public class AThomas_TODOLIST_v1 {
     // - - - - - - - - - OTHER REQUIREMENTS - - - - - - - - - // 
     // Function 6 - check the status of the task
     private static void pendingTask() throws IOException {
+        try{
     Scanner sc = new Scanner(System.in);
     System.out.println("Enter the task number to mark as pending:");
     int taskNumber = sc.nextInt();
@@ -196,9 +202,14 @@ public class AThomas_TODOLIST_v1 {
         } else {
             System.out.println("Task is already pending.");
         }
+    } catch(InputMismatchException e){
+        System.err.println("Invailed input");
+        pendingTask();
+    }
 }
     // Function 7 - check the status of the task
     private static void completedTask() throws IOException {
+        try{
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the task number to mark as complete:");
         int taskNumber = sc.nextInt();
@@ -222,6 +233,10 @@ public class AThomas_TODOLIST_v1 {
             System.out.println("Task updated with completed status.");
         } else {
             System.out.println("Task is already completed.");
+        }
+        }catch(InputMismatchException e){
+            System.err.println("invaild input");
+            completedTask();
         }
         
     }
