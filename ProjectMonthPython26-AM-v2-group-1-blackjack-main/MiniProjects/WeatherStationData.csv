@@ -1,0 +1,18 @@
+Station,Location,Date,Time Start,Time End,Temperature Highest,Temperature Lowest,Humidity (%),Wind in mph,Weather
+NJ Weather Hub,Toms River,01/11/2026,6:00 PM,12:00 AM,39,34,50.00,18.02,Clear
+NJ Weather Hub,Toms River,01/12/2026,6:00 PM,12:00 AM,37,34,61.00,6.21,Clear
+NJ Weather Hub,Toms River,01/13/2026,6:00 PM,12:00 AM,46,46,50.00,8.70,Overcast
+NJ Weather Hub,Toms River,01/14/2026,6:00 PM,12:00 AM,N/A,N/A,0.00,0.00,N/A
+NJ Weather Hub,Toms River,01/15/2026,6:00 PM,12:00 AM,28,21,48.00,29.59,Clear
+NJ Weather Hub,Toms River,01/16/2026,6:00 PM,12:00 AM,34,28,48.00,30.08,Overcast
+NJ Weather Hub,Toms River,01/17/2026,6:00 PM,12:00 AM,32,27,0.00,30.13,Clear
+NJ Weather Hub,Toms River,01/18/2026,6:00 PM,12:00 AM,32,30,0.00,29.85,Light Snow
+NJ Weather Hub,Toms River,01/19/2026,6:00 PM,12:00 AM,28,23,89.00,30.08,Clear
+NJ Weather Hub,Toms River,01/20/2026,6:00 PM,12:00 AM,16,10,56.00,30.50,Clear
+NJ Weather Hub,Toms River,01/21/2026,6:00 PM,12:00 AM,37,37,58.00,30.22,Passing Clouds
+NJ Weather Hub,Toms River,01/22/2026,6:00 PM,12:00 AM,43,37,36.00,30.09,Clear
+NJ Weather Hub,Toms River,01/23/2026,6:00 PM,12:00 AM,34,16,33.00,30.31,Clear
+NJ Weather Hub,Toms River,01/24/2026,6:00 PM,12:00 AM,18,16,40.00,30.68,Passing Clouds
+New YOrk Post,New York City,12/09/2009,9:08 AM,11:12 PM,90.0,80.0,70.0,60.0
+
+New York,Bloond,01/01/2027,11:11 AM,12:12 PM,90.0,12.0,89.0,23.0,Where>
